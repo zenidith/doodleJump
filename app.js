@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let upTimerId
   let downTimerId
   let isJumping = true  
+  let isGoingLeft = false
+  let isGoingRight = false
+  let leftTimerId
+  let rightTimerId
 
   function createDoodler() {
       grid.appendChild(doodler)
@@ -96,14 +100,33 @@ function gameOver() {
     clearInterval(downTimerId)
 }
 
-function control() {
-    if(e.key === "Arrowleft") {
-
-    } else if (e.key === "Arrowright") {
-
-    } else if (e.key === "Arrowup") {
-
+function control(e) {
+    if(e.key === "ArrowLeft") {
+        moveLeft()
+    } else if (e.key === "ArrowRight") {
+        moveRight()
+    } else if (e.key === "ArrowUp") {
     }
+}
+
+function moveLeft() {
+    isGoingLeft = true
+    leftTimerId = setInterval(function () {
+        if (doodlerLeftSpace >= 0) {
+            doodlerLeftSpace -=5 
+            doodler.style.left = doodlerLeftSpace + 'px'
+        } else moveRight()
+    },30)
+}
+
+function moveRight() {
+    isGoingRight = true
+    rightTimerId = setInterval(function () {
+        if(doodlerLeftSpace <= 340) {
+            doodlerLeftSpace += 50
+            doodler.style.left = doodlerLeftSpace + 'px'
+        } else moveLeft()
+    },30)
 }
 
 function start() {
@@ -112,6 +135,7 @@ function start() {
       createDoodler()
       setInterval(movePlatforms,30)
       jump()
+      document.addEventListener('keyup', control)
     } 
   }
   start()
