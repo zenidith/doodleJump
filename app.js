@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function createDoodler() {
       grid.appendChild(doodler)
       doodler.classList.add('doodler')
+      doodlerLeftSpace = platforms[0].left
       doodler.style.left = doodlerLeftSpace + 'px'
       doodler.style.bottom = doodlerBottomSpace + 'px'
 
@@ -67,11 +68,27 @@ function fall() {
     downTimerId = setInterval(function() {
         doodlerBottomSpace -= 5
         doodler.style.bottom =  doodlerBottomSpace + 'px'
-
+        if (doodlerBottomSpace <= 0) {
+            gameOver()
+        }
     },30)
 }
 
-  function start() {
+function gameOver() {
+    isGameOver = true
+    clearInterval(upTimerId)
+    clearInterval(downTimerId)
+}
+
+function control() {
+    if(e.key === "Arrowleft") {
+
+    } else if (e.key === "Arrowright") {
+
+    } else if (e.key === "Arrowup")
+}
+
+function start() {
     if (!isGameOver) {
       createPlatforms()
       createDoodler()
