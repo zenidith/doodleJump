@@ -131,10 +131,17 @@ function moveRight() {
     isGoingRight = true
     rightTimerId = setInterval(function () {
         if(doodlerLeftSpace <= 340) {
-            doodlerLeftSpace += 50
+            doodlerLeftSpace += 5
             doodler.style.left = doodlerLeftSpace + 'px'
         } else moveLeft()
     },30)
+}
+
+function moveStraight() {
+    isGoingLeft = false
+    isGoingRight = false
+    clearInterval(rightTimerId)
+    clearInterval(leftTimerId)
 }
 
 function start() {
