@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let isGameOver = false
   let platformCount = 5
   let platforms = []
+  let upTimerId
+  let downTimerId
 
   function createDoodler() {
       grid.appendChild(doodler)
@@ -39,10 +41,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function movePlatforms() {
+      if (doodlerBottomSpace > 200) {
+          platforms.forEach(platform => {
+              platform.bottom -= 4
+              let visual = platform.visual
+              visual.style.bottom = platform.bottom + 'px'
+          })
+      }
+  }
+
+  function jump() {
+      upTimerId = setInterval(function () {
+        doodlerBottomSpace += 20
+        doodler.style.bottom = doodlerBottomSpace + 'px'
+        if (doodlerBottomSpace > 350) {
+            fall()
+        }
+      },30)
+  }
+
+function fall() {
+    
+}
+
   function start() {
     if (!isGameOver) {
       createPlatforms()
       createDoodler()
+      setInterval(movePlatforms,30)
+      jump()
     } 
   }
   start()
