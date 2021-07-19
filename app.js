@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
       upTimerId = setInterval(function () {
         doodlerBottomSpace += 20
         doodler.style.bottom = doodlerBottomSpace + 'px'
-        if (doodlerBottomSpace > 350) {
+        if (doodlerBottomSpace > startPoint + 200) {
             fall()
         }
       },30)
@@ -83,7 +83,7 @@ function fall() {
                 (doodlerLeftSpace <= (platform.left + 85)) &&
                 !isJumping
             ) {
-                console.log("is jumping!")
+                startPoint = doodlerBottomSpace
                 jump()
             }
         })
