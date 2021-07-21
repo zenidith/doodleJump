@@ -1,7 +1,19 @@
+#game {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px;
+    border: 10px ridge greenyellow;
+}
+
 .grid {
     width: 400px;
     height: 600px;
     background-image: url(images/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     position: relative;
     font-size: 200px;
     text-align: center;
