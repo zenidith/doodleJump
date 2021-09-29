@@ -4,7 +4,7 @@ This is a Doodle Jump clone made with html/css/js.
 
 <!-- <img src="/images/doodler.gif" width="800"/> -->
 
-You can play the game [here!](https://zenidith.github.io/doodleJump/)
+You can play the game [here!](https://lucid-easley-34a6d9.netlify.app/)
 
 <h4>ideas for improving the game</h4>
 
