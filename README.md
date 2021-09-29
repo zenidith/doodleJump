@@ -2,7 +2,7 @@
 
 This is a Doodle Jump clone made with html/css/js. 
 
-<!-- <img src="/images/doodler.gif" width="800"/> -->
+<img src="/images/doodle.gif" width="800"/>
 
 You can play the game [here!](https://lucid-easley-34a6d9.netlify.app/)
 
