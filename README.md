@@ -10,7 +10,9 @@
 
 This is a Doodle Jump clone made with html/css/js. 
 
-<img src="images/doodler.gif" alt="Doodle Jump demo" width="800"/>
+<img src="/images/doodler.gif" alt="Doodle Jump demo" width="800"/>
+![Doodle Jump game](/images/doodler.gif)
+
 
 You can play the game [here!](https://zenidith.github.io/doodleJump/)
 
